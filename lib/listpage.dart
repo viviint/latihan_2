@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:latihan_2/songlist.dart';
 
 
 class Listpage  extends StatelessWidget {
@@ -14,51 +15,60 @@ class Listpage  extends StatelessWidget {
         title: const Text(""),
         leading: Icon(Icons.arrow_back,),
       ),
-    body: Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Stack(
+    body: Expanded(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              width: double.infinity,
-              height: 160,
-              decoration: BoxDecoration(
-                color: Colors.purple[700],
-              ),
-              child: Text("Liked Songs",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30.0,
-                fontWeight: FontWeight.w800,
-              ),),
-              ),
-               Positioned(
-                  left:110,
-                  right: 110,
-                  bottom: 20,
-                  child:Container(
-                    width: 50,
-                    height: 37,
-                    child: Text("Shuffle Play",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300
-                    ),),
+              child: Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 160,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.green,
-                    
+                      color: Colors.purple[700],
                     ),
-                  )
-                )
-          ],
-        ) 
-      ],
+                    child: Center(
+                      child: Text("Liked Songs",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.w800,
+                      ),),
+                    ),
+                    ),
+                     Positioned(
+                        left:110,
+                        right: 110,
+                        bottom: 20,
+                        child:Container(
+                          width: 50,
+                          height: 37,
+                          child: Center(
+                            child: Text("Shuffle Play",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300
+                            ),),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.green,
+                      ),
+                     )
+                   )
+                 ],
+                ),
+            ),
+              Songlist()
+            ],
+          ),
+      ),
     ),
-      
     );
   }
 }
