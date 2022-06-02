@@ -8,13 +8,13 @@ class Mainpage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
-
 class _MainPageState extends State<Mainpage> {
 
   int currentIndex = 0;
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => 
+  Scaffold(
   bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,

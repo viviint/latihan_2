@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_2/bottommenu.dart';
+import 'package:get/get.dart';
 import 'package:latihan_2/listpage.dart';
-import 'package:latihan_2/songlist.dart';
+import 'package:latihan_2/secondpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'latihan_2',
       theme: ThemeData(
         primarySwatch: Colors.purple,
